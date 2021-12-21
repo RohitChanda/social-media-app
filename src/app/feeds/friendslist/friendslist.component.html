@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+
+<div class="row">
+
+
+    <div class="col-md-12 grid-margin">
+        <div class="card rounded">
+            <div class="card-body">
+                <h3 class=" text-center card-title">Friends List</h3>
+
+                <div class="row" *ngIf="isFriendList">
+                    <div class="col-md-12 d-flex justify-content-between mb-2 pb-2 border-bottom"
+                        *ngFor="let user of friendsList">
+                        <div class="d-flex align-items-center hover-pointer">
+
+
+                            <img class="img-xs rounded-circle"
+                                src={{user.profile_pic?user.profile_pic:default_profil_img}} alt="">
+                            <div class="ml-2">
+                                <a routerLink="/peopleprofile/{{user._id}}">
+                                    <p>{{user.name | titlecase}}</p>
+                                </a>
+                            </div>
+
+                        </div>
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
